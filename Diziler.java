@@ -15,8 +15,7 @@ public class Diziler {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int fark;
-        int en_kucuk_fark = 100;
+      
         int[] dizi = new int[3];        
         dizi[0] = 3;
         dizi[1] = 6;
@@ -28,10 +27,10 @@ public class Diziler {
     
     static int ardısık_en_kucuk(int[] dizi) {
         int fark;
-        int en_kucuk_fark = 10000;
+        int en_kucuk_fark = 10000;//burayı sonsuza veya en büyük sayı gibi bişeye eşitleyebilirmiyiz
         
-        
-        for (int i = 0; i < dizi.length - 1; i++) {
+        int i;
+        for ( i = 0; i < dizi.length - 1; i++) {
             fark = dizi[i] - dizi[i + 1];
             if (Math.abs(fark) < en_kucuk_fark) {
                 en_kucuk_fark = Math.abs(fark);
@@ -45,10 +44,12 @@ public class Diziler {
     static int kombinasyonlu_en_kucuk_fark(int[] dizi) {
         
         int fark;
-        int en_kucuk_fark = 100;
-        
-        for (int i = 0; i < dizi.length - 1; i++) {
-            for (int j = i + 1; j < dizi.length; j++) {
+        int en_kucuk_fark = 1000;//burayı sonsuza veya en büyük sayı gibi bişeye eşitleyebilirmiyiz
+        int i;
+       
+        for (i = 0; i < dizi.length - 1; i++) {
+            int j;
+            for ( j = i + 1; j < dizi.length; j++) {
                 
                 fark = dizi[i] - dizi[j];
                 if (Math.abs(fark) < en_kucuk_fark) {
